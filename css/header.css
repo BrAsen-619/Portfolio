@@ -1,0 +1,129 @@
+/* Header & profile */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: white;
+  background: var(--header-bg);
+  padding: 0.8rem 1.2rem 0.2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  border-radius: 0 0 24px 24px;
+  overflow: visible;
+  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* NOTE: background path is relative to this file (css/), so go up one level */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/barca.jpg");
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px) brightness(0.8);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 1rem;
+  padding-left: 2.5rem;
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+
+.profile-img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0px 0px 25px 2px rgba(236, 0, 4, 0.5),
+    0 4px 24px 0 rgba(255, 78, 80, 0.25);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    box-shadow 0.3s;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.profile-img:hover {
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 8px 32px 0 rgba(255, 78, 80, 0.45),
+    0 0 0 8px rgba(255, 255, 255, 0.12);
+}
+
+.profile-info {
+  text-align: left;
+}
+
+.profile-info h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.profile-info p {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.9;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-bio {
+  display: block;
+  font-size: 0.95rem;
+  color: #eee;
+  font-weight: 400;
+  margin-top: 0.4rem;
+}
+
+.profile-bio a {
+  color: #fffce1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.profile-bio a:hover {
+  color: #008cff;
+  text-shadow: 0 2px 8px rgb(26, 19, 19);
+}
+
+.social-links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: rgba(255, 187, 0, 0.621);
+  transform: translateY(-3px);
+}

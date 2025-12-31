@@ -1,0 +1,117 @@
+/* Navigation (toggle, panel) */
+.nav-toggle {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 110;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+
+.nav-toggle:focus { outline: 2px solid rgba(255, 255, 255, 0.25); }
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 12px;
+  right: 70px;
+  z-index: 110;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  padding: 0;
+}
+
+.theme-toggle:hover { background: rgba(255, 255, 255, 0.15); transform: scale(1.1); }
+.theme-toggle:focus { outline: 2px solid rgba(255, 255, 255, 0.25); }
+
+/* Main nav - desktop layout */
+.main-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  position: relative;
+  transition: none;
+  z-index: 100;
+}
+
+/* Link styles reused from header nav */
+.main-nav a {
+  padding: 0.5rem 0;
+  border-bottom: 3px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: inherit;
+  font-weight: 700;
+}
+
+.main-nav a:hover, .main-nav a.active { border-color: white; color: white; }
+
+/* Mobile: hide the inline desktop nav, use slide-in panel */
+@media (max-width: 700px) {
+  .nav-toggle { display: flex; }
+  .theme-toggle { right: 65px; }
+
+  /* slide-in panel from right */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -280px; /* hidden by default */
+    width: 260px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.2rem;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: right 0.28s ease;
+    z-index: 120;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .main-nav.open { right: 0; }
+
+  .main-nav a { width: 100%; padding: 0.6rem 0; font-size: 0.95rem; font-weight: 700; text-align: left; color: #fff; }
+
+  .profile-header { justify-content: center; gap: 1.5rem; padding-left: 0; flex-direction: column; }
+
+  .profile-img { width: 80px; height: 80px; }
+
+  .nav-close { background: none; border: none; color: #fff; font-size: 20px; align-self: flex-end; margin-bottom: 8px; cursor: pointer; }
+}
+
+/* Desktop: show nav inline, hide the toggle */
+@media (min-width: 701px) {
+  .nav-toggle { display: none; }
+  .main-nav { display: flex; position: relative; right: 0; height: auto; width: 100%; }
+  .nav-close { display: none; }
+}
+
+/* ensure links don't show default underline */
+.main-nav a, .nav-toggle, .nav-close { text-decoration: none; }

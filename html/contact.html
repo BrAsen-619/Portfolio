@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — BrAsen SthA</title>
+    <meta
+      name="description"
+      content="Contact BrAsen SthA - Web Developer & Creative Visionary"
+    />
+    <link rel="icon" type="image/jpeg" href="../images/barca.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/utils.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <!-- Header with profile and navigation -->
+    <header>
+      <div class="profile-header">
+        <img
+          src="../images/me.jpg"
+          alt="BrAsen SthA"
+          class="profile-img"
+        />
+        <div class="profile-info">
+          <h1>BrAsen SthA</h1>
+          <p>Web Developer & Creative Visionary</p>
+          <span class="profile-bio">
+            Sindhupalchock, Nepal |
+            <a href="mailto:kartigyashrestha1234@gmail.com">Email Me here!!!</a>
+          </span>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/kartigya_stha?igsh=cTR1N3RzdGVtazY5"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/share/1FJUoZ2axr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.snapchat.com/add/brasen_stha?share_id=UKMFRhXU7bM&locale=en-GB"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              aria-label="Snapchat"
+              ><i class="fab fa-snapchat"></i
+            ></a>
+            <a
+              href="https://github.com/BrAsen-619"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              aria-label="Github"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theme toggle button -->
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <!-- Navigation toggle button -->
+      <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <!-- Main navigation -->
+      <nav id="mainNav" class="main-nav" aria-hidden="true">
+        <button type="button" class="nav-close" aria-label="Close navigation">
+          <i class="fas fa-times"></i>
+        </button>
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form
+          id="contactForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="32bb68bc-cfb5-4e0e-a056-288783e60628"
+          />
+          <input
+            type="text"
+            name="honeypot"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your full name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write your message here..."
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <span>&copy; BrAsen Shrestha. All rights reserved.</span>
+        <span class="footer-social">
+          <a
+            href="https://github.com/BrAsen-619"
+            target="_blank"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/kartigya_stha?igsh=cTR1N3RzdGVtazY5"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/share/1FJUoZ2axr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            href="https://www.snapchat.com/add/brasen_stha?share_id=UKMFRhXU7bM&locale=en-GB"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="Snapchat"
+            ><i class="fab fa-snapchat"></i
+          ></a>
+        </span>
+      </div>
+    </footer>
+    <script src="../myweb.js"></script>
+  </body>
+</html>

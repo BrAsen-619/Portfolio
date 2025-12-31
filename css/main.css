@@ -1,0 +1,146 @@
+/* Main content, hero, components */
+main {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  animation: fadeInMain 1.2s;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  background: none;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: rgb(196, 192, 192);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1.5px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: rgb(140, 123, 123);
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta { margin-top: 1.5rem; }
+
+/* SKILLS SECTION */
+.skills { margin-bottom: 4rem; }
+
+.skills h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color:gray;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.skill-cards { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(255, 59, 63, 0.1);
+  padding: 1.5rem 2rem;
+  min-width: 150px;
+  max-width: 180px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.dark-theme .skill-card { background: rgba(70, 70, 70, 0.9); color: #f0f0f0; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); }
+.beige-theme .skill-card { background: rgba(245, 241, 232, 0.95); color: #5a5a5a; box-shadow: 0 4px 16px rgba(101, 84, 68, 0.15); }
+
+.skill-card:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 8px 24px rgba(255, 59, 63, 0.2); }
+
+.skill-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 0.8rem; transition: transform 0.3s ease, color 0.3s ease; }
+.dark-theme .skill-icon { color: #b1b0a9; }
+.beige-theme .skill-icon { color: #8b6f47; }
+.skill-card:hover .skill-icon { transform: scale(1.2) rotate(5deg); }
+
+.skill-title { font-weight: 700; color: var(--dark); font-size: 1.1rem; letter-spacing: 0.5px; }
+.dark-theme .skill-title { color: #f0f0f0; }
+.beige-theme .skill-title { color: #5a5a5a; }
+
+/* EXPERIENCE & EDUCATION */
+.timeline { margin: 0 auto 4rem auto; max-width: 700px; border-left: 4px solid var(--primary); padding-left: 2rem; }
+
+.timeline-item { margin-bottom: 2.5rem; position: relative; }
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot { position: absolute; left: -2.2rem; top: 0.2rem; width: 1.2rem; height: 1.2rem; background: var(--primary); border-radius: 50%; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(255, 59, 63, 0.27); }
+
+.timeline-title { font-size: 1.2rem; font-weight: 700; color: rgb(176, 133, 133); }
+.timeline-date { font-size: 0.95rem; color: var(--gray); margin-bottom: 0.2rem; }
+.timeline-desc { color: #b5abab; font-size: 1rem; }
+
+/* PROJECTS */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+
+.project-card {
+  border: 3px solid var(--primary);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s, background 0.3s;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(255, 78, 80, 0.15);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+
+.project-card:hover { transform: translateY(-14px) scale(1.03) rotate(-1deg); box-shadow: 0 18px 38px 0 rgba(255, 78, 80, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.95); }
+
+.project-card img { width: 100%; height: 160px; object-fit: cover; border-bottom: 3px solid var(--primary); }
+
+.project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+
+.project-content h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 0.75rem; color: var(--primary-dark); }
+.project-content p { flex-grow: 1; color: #666; font-weight: 500; margin-bottom: 1rem; }
+.project-tags { margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray); font-weight: 600; }
+.project-content a { font-weight: 700; font-size: 1rem; color: var(--primary); align-self: flex-start; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 2px solid transparent; transition: border-color 0.3s ease; }
+.project-content a:hover { border-color: var(--primary-dark); }
+
+/* TESTIMONIALS */
+.testimonials { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-bottom: 4rem; }
+
+.testimonial { background: rgba(255, 255, 255, 0.85); border-radius: 16px; box-shadow: 0 4px 16px rgba(255, 59, 63, 0.1); padding: 1.5rem 2rem; max-width: 350px; font-style: italic; color: #333; position: relative; }
+
+.testimonial::before { content: "“"; font-size: 2.5rem; color: var(--primary); position: absolute; left: 1rem; top: 0.5rem; }
+
+.testimonial-author { margin-top: 1rem; font-weight: 700; color: var(--primary-dark); font-size: 1rem; }
+
+/* CONTACT FORM */
+#contact form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+
+.form-group { display: flex; flex-direction: column; }
+
+#contact label { font-weight: 700; margin-bottom: 0.5rem; color: rgb(117, 91, 91); text-transform: uppercase; letter-spacing: 1.2px; font-size: 0.9rem; }
+
+#contact input, #contact textarea { padding: 0.75rem 1rem; border: 2px solid var(--primary); border-radius: 8px; font-size: 1rem; resize: vertical; transition: border-color 0.3s ease, background-color 0.3s ease; font-family: inherit; color: #333; background-color: #f9f9f9; }
+
+.dark-theme #contact input, .dark-theme #contact textarea { background-color: #3a3a3a; color: #f0f0f0; border-color: #c7c6bf; }
+.beige-theme #contact input, .beige-theme #contact textarea { background-color: #fffcf7; color: #5a5a5a; border-color: #8b6f47; }
+
+#contact input:focus, #contact textarea:focus { border-color: var(--primary-dark); outline: none; box-shadow: 0 0 5px rgba(208, 32, 37, 0.67); }
+
+.dark-theme #contact input:focus, .dark-theme #contact textarea:focus { border-color: #ffd700; box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+.beige-theme #contact input:focus, .beige-theme #contact textarea:focus { border-color: #8b6f47; box-shadow: 0 0 5px rgba(139, 111, 71, 0.3); }
+
+#contact button { background: var(--primary); color: white; font-weight: 900; border: none; padding: 1rem; font-size: 1.1rem; border-radius: 10px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; transition: background-color 0.3s ease; }
+
+#contact button:hover { background: var(--primary-dark); }

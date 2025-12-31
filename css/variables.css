@@ -1,0 +1,29 @@
+/* Variables */
+:root {
+  --primary: #313030;
+  --primary-dark: #464141ce;
+  --secondary: #ff0000;
+  --accent: #727065;
+  --light: #ffffff86;
+  --dark: #333333;
+  --gray: #95a5a6;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --bg-color: #2a2a2a;
+  --text-color: #f0f0f0;
+  --header-bg: rgba(20, 20, 20, 0.9);
+}
+
+/* Dark Theme (DEFAULT) */
+body, body.dark-theme {
+  --bg-color: #2a2a2a;
+  --text-color: #f0f0f0;
+  --header-bg: rgba(20, 20, 20, 0.9);
+}
+
+/* Beige Theme */
+body.beige-theme {
+  --bg-color: #f5f1e8;
+  --text-color: #5a5a5a;
+  --header-bg: rgba(101, 84, 68, 0.85);
+}
