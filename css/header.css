@@ -14,7 +14,7 @@ header {
   transition: var(--transition);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   position: relative;
   flex-wrap: wrap;
 } 

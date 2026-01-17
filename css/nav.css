@@ -1,6 +1,6 @@
 /* Navigation (toggle, panel) */
 .nav-toggle {
-  position: absolute;
+  position: fixed;
   top: 12px;
   right: 16px;
   z-index: 150;
@@ -25,7 +25,7 @@
 
 /* Theme Toggle Button */
 .theme-toggle {
-  position: absolute;
+  position: fixed;
   top: 12px;
   right: 70px;
   z-index: 110;
@@ -89,7 +89,7 @@
   }
   
   .theme-toggle { 
-    right: 65px; 
+    right: 70px; 
   }
 
   /* Mobile nav panel with glass morphism */
