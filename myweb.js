@@ -74,8 +74,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Toggle mobile navigation (toggle instead of only add)
   if (navToggle) {
-    navToggle.addEventListener('click', function () {
-      if (mainNav.classList.contains('open')) closeNav(); else openNav();
+    navToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      console.log('Nav toggle clicked. Nav currently open:', mainNav.classList.contains('open'));
+      console.log('Nav links found:', navLinks.length);
+      if (mainNav.classList.contains('open')) {
+        closeNav();
+      } else {
+        openNav();
+      }
     });
   } else {
     console.warn('.nav-toggle button not found.');
@@ -86,14 +93,31 @@ document.addEventListener('DOMContentLoaded', function () {
     navClose.addEventListener('click', closeNav);
   }
 
-  // Close mobile nav when clicking on a link (mobile)
+  // Close nav when clicking on a link (always close; works even if viewport metrics change)
   if (navLinks && navLinks.length) {
     navLinks.forEach(link => {
       link.addEventListener('click', function () {
-        if (window.innerWidth <= 700) closeNav();
+        closeNav();
       });
     });
   }
+
+  // Close nav when clicking outside the menu (only when open and on mobile)
+  document.addEventListener('click', function (e) {
+    if (!mainNav.classList.contains('open')) return;
+    // Only close if clicking outside nav and not on the toggle button
+    if (mainNav.contains(e.target)) return;
+    if (navToggle && navToggle.contains(e.target)) return;
+    closeNav();
+  });
+
+  // Close nav with Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+      closeNav();
+      if (navToggle) navToggle.focus();
+    }
+  });
 
   // Smooth scroll for navigation links (only for existing links)
   document.querySelectorAll('nav a').forEach(link => {
@@ -113,8 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
           behavior: 'smooth'
         });
 
-        // close nav on mobile after scroll
-        if (window.innerWidth <= 700) closeNav();
+        // close nav after scroll (works across zoom/viewport changes)
+        closeNav();
       }
     });
   });

@@ -3,23 +3,25 @@
   position: absolute;
   top: 12px;
   right: 16px;
-  z-index: 110;
+  z-index: 150;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-size: 18px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 0;
+  transition: all 0.2s ease;
 }
 
 .nav-toggle:focus { outline: 2px solid rgba(255, 255, 255, 0.25); }
+.nav-toggle:hover { background: rgba(255, 255, 255, 0.15); }
 
 /* Theme Toggle Button */
 .theme-toggle {
@@ -59,7 +61,7 @@
   z-index: 100;
 }
 
-/* Link styles reused from header nav */
+/* Link styles - desktop */
 .main-nav a {
   padding: 0.5rem 0;
   border-bottom: 3px solid transparent;
@@ -67,51 +69,174 @@
   letter-spacing: 1.2px;
   color: inherit;
   font-weight: 700;
+  text-decoration: none;
 }
 
-.main-nav a:hover, .main-nav a.active { border-color: white; color: white; }
+.main-nav a:hover, 
+.main-nav a.active { 
+  border-color: white; 
+  color: white; 
+}
 
-/* Mobile: hide the inline desktop nav, use slide-in panel */
+.nav-close {
+  display: none;
+}
+
+/* ==================== MOBILE STYLES ==================== */
 @media (max-width: 700px) {
-  .nav-toggle { display: flex; }
-  .theme-toggle { right: 65px; }
-
-  /* slide-in panel from right */
-  .main-nav {
-    position: fixed;
-    top: 0;
-    right: -280px; /* hidden by default */
-    width: 260px;
-    height: 100vh;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem 1.2rem;
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    transition: right 0.28s ease;
-    z-index: 120;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  .nav-toggle { 
+    display: flex !important; 
+  }
+  
+  .theme-toggle { 
+    right: 65px; 
   }
 
-  .main-nav.open { right: 0; }
+  /* Mobile nav panel with glass morphism */
+  .main-nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: 75% !important;
+    max-width: 300px !important;
+    height: 100vh !important;
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3), inset 1px 0 rgba(255, 255, 255, 0.1) !important;
+    z-index: 140 !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+  }
 
-  .main-nav a { width: 100%; padding: 0.6rem 0; font-size: 0.95rem; font-weight: 700; text-align: left; color: #fff; }
+  .main-nav.open {
+    transform: translateX(0) !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 
-  .profile-header { justify-content: center; gap: 1.5rem; padding-left: 0; flex-direction: column; }
+  /* Mobile nav close button with glass morphism */
+  .nav-close {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    cursor: pointer !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    margin: 1rem 0 0.5rem 1rem !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  }
 
-  .profile-img { width: 80px; height: 80px; }
+  .nav-close:hover { 
+    transform: rotate(90deg) scale(1.1) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
+  }
 
-  .nav-close { background: none; border: none; color: #fff; font-size: 20px; align-self: flex-end; margin-bottom: 8px; cursor: pointer; }
+  .nav-close:active {
+    transform: rotate(90deg) scale(0.95) !important;
+  }
+
+  /* Mobile nav links */
+  .main-nav a {
+    display: block !important;
+    padding: 1rem 1rem !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    margin: 0 !important;
+  }
+
+  .main-nav a:last-of-type { 
+    border-bottom: none !important; 
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    padding-left: 1.5rem !important;
+    border-left: 3px solid #fff !important;
+  }
+
+  .profile-header { 
+    justify-content: center !important; 
+    gap: 1.5rem !important; 
+    padding-left: 0 !important; 
+    flex-direction: column !important; 
+  }
+
+  .profile-img { 
+    width: 80px !important; 
+    height: 80px !important; 
+  }
 }
 
-/* Desktop: show nav inline, hide the toggle */
+/* ==================== DESKTOP STYLES ==================== */
 @media (min-width: 701px) {
-  .nav-toggle { display: none; }
-  .main-nav { display: flex; position: relative; right: 0; height: auto; width: 100%; }
-  .nav-close { display: none; }
+  .nav-toggle { 
+    display: none !important; 
+  }
+  
+  .nav-close { 
+    display: none !important; 
+  }
+  
+  .main-nav { 
+    display: flex !important; 
+    position: relative !important; 
+    right: auto !important; 
+    height: auto !important; 
+    width: 100% !important; 
+    transform: none !important; 
+    pointer-events: auto !important; 
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .main-nav a {
+    border-bottom: 3px solid transparent !important;
+    border-left: none !important;
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active {
+    border-bottom-color: white !important;
+    border-left: none !important;
+    background-color: transparent !important;
+  }
 }
 
-/* ensure links don't show default underline */
-.main-nav a, .nav-toggle, .nav-close { text-decoration: none; }
+/* Base link styling */
+.main-nav a, 
+.nav-toggle, 
+.nav-close { 
+  text-decoration: none; 
+}

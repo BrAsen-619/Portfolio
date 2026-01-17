@@ -1,13 +1,28 @@
 /* Base styles */
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* prevent horizontal overflow during pinch/zoom */
+  overscroll-behavior-y: contain; /* avoid overscroll exposing extra space */
+}
+
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   min-height: 100vh;
+  height: 100%;
   scroll-behavior: smooth;
   animation: fadeInBody 1.2s;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Ensure media elements don't overflow and remove baseline whitespace */
+img, picture, svg, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 body.dark-theme {
